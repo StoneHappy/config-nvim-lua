@@ -1,6 +1,6 @@
-require("packer-config")
 require("settings")
 require("mappings")
+require("packer-config")
 require("lsp-config")
 require("colorscheme-config.nightfox")
 require("nvim-tree-config")
