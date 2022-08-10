@@ -7,7 +7,11 @@ map('n', '<leader>l', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>1', ':tabnext<CR>', opts)
 map('n', '<leader>2', ':tabprevious<CR>', opts)
 map('n', '<leader>3', ':tabclose<CR>', opts)
-
+map('n', '<leader>3', ':tabclose<CR>', opts)
+map('n', '<leader>jk', ':q!<CR>', opts)
+map('n', '<leader>s', ':wCR>', opts)
+map('i', '<leader>jk', '<esc>', opts)
+map('i', '0s', '<esc>:w<cr>', opts)
 -- toggleterm.nvim mapping
 map('n', '<leader>tml', ':ToggleTerm<CR>', opts)
 function _G.set_terminal_keymaps()
