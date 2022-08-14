@@ -16,8 +16,8 @@ map('t', '0f', 'git commit -m "🐞 fix: " ', opts)
 map('t', '0a', 'git commit -m "✨ feat: " ', opts)
 map('t', '0d', 'git commit -m "📃 docs: " ', opts)
 map('t', '0r', 'git commit -m "🦄 refactor: " ', opts)
+
 -- toggleterm.nvim mapping
-map('n', '<leader>tml', ':ToggleTerm<CR>', opts)
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)

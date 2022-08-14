@@ -8,10 +8,7 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use 'nvim-lualine/lualine.nvim'
-    use {
-        "akinsho/toggleterm.nvim", tag = 'v2.*', 
-        config = function() require("toggleterm").setup() end,
-    }
+    use 'akinsho/toggleterm.nvim'
     use {
         "nanozuki/tabby.nvim",
         config = function() require("tabby").setup({
