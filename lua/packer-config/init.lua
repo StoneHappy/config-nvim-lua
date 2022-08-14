@@ -18,4 +18,5 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-dap'
     use 'nvim-lua/plenary.nvim'
     use 'Shatur/neovim-cmake'
+    use 'folke/which-key.nvim'
 end)
