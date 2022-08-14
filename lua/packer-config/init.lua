@@ -19,4 +19,5 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'Shatur/neovim-cmake'
     use 'folke/which-key.nvim'
+    use 'nvim-telescope/telescope.nvim' 
 end)
