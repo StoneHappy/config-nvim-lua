@@ -41,3 +41,21 @@ vim.api.nvim_set_keymap("n", "<leader>tp", ":tabp<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
 vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
+
+-- lsp config
+map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+-- code action
+map('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+-- go xx
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+map('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+-- diagnostic
+map('n', 'go', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+map('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+map('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+-- leader + =
+map('n', '<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
