@@ -1,3 +1,4 @@
+require("nvim-lsp-installer").setup {}
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
@@ -19,6 +20,14 @@ require('lspconfig')['clangd'].setup{
     flags = lsp_flags,
 }
 
+require('lspconfig')['sumneko_lua'].setup{
+    flags = lsp_flags
+}
+
+
+require('lspconfig')['cmake'].setup{
+    flags = lsp_flags;
+}
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -26,7 +35,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'sumneko_lua', 'cmake' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -36,7 +45,6 @@ end
 
 -- luasnip setup
 local luasnip = require 'luasnip'
-
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
@@ -46,9 +54,6 @@ cmp.setup {
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
